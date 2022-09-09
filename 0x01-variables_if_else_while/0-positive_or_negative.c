@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
  * main - entry point
  * Description: prints "is it positive or negative"
  * Return: 0
  */
+
 int main(void)
 {
 int n;
@@ -24,5 +26,6 @@ else
 {
 printf("%d is negative\n", n);
 }
+
 return (0);
 }

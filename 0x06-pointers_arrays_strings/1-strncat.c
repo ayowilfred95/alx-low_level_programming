@@ -1,24 +1,31 @@
-#include <stdio.h>
-int main() {
-  char s1[100] = "programming ", s2[] = "is awesome";
-  int length, j;
+#include "main.h"
 
-  // store length of s1 in the length variable
-  length = 0;
-  while (s1[length] != '\0') {
-    ++length;
-  }
+/**
+ * _strncat - concatenates n bytes from a string to another
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes of str to concatenate
+ *
+ * Return: a pointer to the resulting string dest
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+	int i, j;
 
-  // concatenate s2 to s1
-  for (j = 0; s2[j] != '\0'; ++j, ++length) {
-    s1[length] = s2[j];
-  }
+	i = 0;
+	j = 0;
 
-  // terminating the s1 string
-  s1[length] = '\0';
+	while (dest[i] != '\0')
+		i++;
 
-  printf("After concatenation: ");
-  puts(s1);
+	while (src[j] != '\0' && j < n)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
 
-  return 0;
+	dest[i] = '\0';
+
+	return (dest);
 }
